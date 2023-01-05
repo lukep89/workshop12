@@ -1,0 +1,4 @@
+sg/edu/nus/iss/app/workshop12/controller/GenRandNoController.class
+sg/edu/nus/iss/app/workshop12/Workshop12Application.class
+sg/edu/nus/iss/app/workshop12/models/Generate.class
+sg/edu/nus/iss/app/workshop12/exception/RandNumberException.class

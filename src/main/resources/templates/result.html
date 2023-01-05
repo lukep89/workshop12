@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>result html</title>
+  </head>
+  <body>
+    <h1>
+      Your list of <span th:text="${numberRandomNum}"></span> random numbers
+    </h1>
+
+    <!-- <ul th:each="numberImg : ${randNumResult}">
+      <li data-th-text="${numberImg}"></li>
+      <img th:src="@{${'/images/' + numberImg}}" width="300" height="300" />
+    </ul> -->
+
+    <table>
+      <tr>
+        <td th:each="numberImg : ${randNumResult}">
+          <p data-th-text="${numberImg}"></p>
+          <img th:src="@{${'/images/' + numberImg}}" width="300" height="300" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
