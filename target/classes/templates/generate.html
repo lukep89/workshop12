@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,6 +16,30 @@
     >
       <p>
         <input type="text" th:field="*{numberVal}" />
+        <input type="submit" value="Generate" />
+      </p>
+    </form>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>generate html</title>
+  </head>
+  <body>
+    <h1>How many numbers do you wish to generate?</h1>
+    <form
+      action="#"
+      data-th-action="@{/rand/generate}"
+      data-th-object="${generateObj}"
+      method="post"
+    >
+      <p>
+        <input type="text" data-th-field="*{numberVal}" />
         <input type="submit" value="Generate" />
       </p>
     </form>

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import sg.edu.nus.iss.app.workshop12.exception.RandNumberException;
 import sg.edu.nus.iss.app.workshop12.models.Generate;
@@ -37,6 +39,18 @@ public class GenRandNoController {
         // associate the bind var to the view/page
         model.addAttribute("generateObj", g);
         return "generate";
+    }
+
+    @GetMapping(path = "/generate") // URL will be --> e.g. localhost:8080/rand/generate?numberVal=3
+    public String generateRandNumByGet(@RequestParam Integer numberVal, Model model) {
+        this.randomizeNum(model, numberVal.intValue());
+        return "result";
+    }
+
+    @GetMapping(path = "/generate/{numberVal}") // URL will be --> e.g. localhost:8080/rand/generate/3
+    public String generateRandNumByGetPV(@PathVariable Integer numberVal, Model model) {
+        this.randomizeNum(model, numberVal.intValue());
+        return "result";
     }
 
     @PostMapping(path = "/generate")
